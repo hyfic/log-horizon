@@ -7,3 +7,7 @@
 /gen/schemas
 
 Cargo.lock
+
+# database
+*.db
+*.wal
