@@ -12,8 +12,8 @@ pub fn settings_is_first_time(state: State<AppState>) -> Result<bool, String> {
 
     match model::settings::get(db) {
         Ok(result) => match result {
-            Some(_) => Ok(true),
-            None => Ok(false),
+            Some(_) => Ok(false),
+            None => Ok(true),
         },
         Err(err) => Err(err.to_string()),
     }
