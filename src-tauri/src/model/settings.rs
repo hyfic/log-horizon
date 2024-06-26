@@ -27,7 +27,7 @@ pub fn insert(db: &Database, data: Settings) -> Result<InsertOneResult, Error> {
     }
 }
 
-pub fn _update(db: &Database, data: Settings) -> Result<UpdateResult, Error> {
+pub fn update(db: &Database, data: Settings) -> Result<UpdateResult, Error> {
     let collection: polodb_core::Collection<Settings> = db.collection(COLLECTION_NAME);
     match collection.update_many(
         doc! {},

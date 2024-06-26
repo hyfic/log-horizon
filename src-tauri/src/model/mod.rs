@@ -1,4 +1,4 @@
-pub mod log;
+pub mod logs;
 pub mod settings;
 
 use std::process;

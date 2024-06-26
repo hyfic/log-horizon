@@ -15,7 +15,8 @@ fn main() {
             controller::settings::settings_is_first_time,
             controller::settings::settings_get_name,
             controller::settings::settings_validate_password,
-            controller::settings::settings_add_data
+            controller::settings::settings_add_data,
+            controller::settings::settings_update_data,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

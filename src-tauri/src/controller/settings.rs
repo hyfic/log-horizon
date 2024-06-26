@@ -69,3 +69,25 @@ pub fn settings_add_data(
         Err(err) => Err(err.to_string()),
     }
 }
+
+#[tauri::command]
+pub fn settings_update_data(
+    name: String,
+    password: String,
+    state: State<AppState>,
+) -> Result<bool, String> {
+    let db = &state.db;
+
+    let hash = bcrypt::hash(password).unwrap();
+
+    match model::settings::update(
+        db,
+        Settings {
+            name,
+            password: hash,
+        },
+    ) {
+        Ok(_) => Ok(true),
+        Err(err) => Err(err.to_string()),
+    }
+}
